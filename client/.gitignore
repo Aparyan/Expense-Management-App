@@ -1,0 +1,9 @@
+# Ignore environment files
+.env
+.env.*
+
+# Other client-specific ignores
+/build
+/dist
+/node_modules
+# Add any other client-specific files or directories to ignore
