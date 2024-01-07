@@ -15,7 +15,7 @@ const Register = () => {
     const submitHandler = async (values) => {
         try {
             setLoading(true);
-            await axios.post('http://localhost:8080/users/register', values);
+            await axios.post('https://expense-management-app-qou0.onrender.com/users/register', values);
             message.success("Registration Successfull");
             setLoading(false);
             navigate("/login");

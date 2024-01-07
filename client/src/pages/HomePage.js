@@ -69,7 +69,7 @@
       try {
         const user = JSON.parse(localStorage.getItem('user'))
         setLoading(true)
-        const res = await axios.post('http://localhost:8080/transactions/get-transaction', {
+        const res = await axios.post('https://expense-management-app-qou0.onrender.com/transactions/get-transaction', {
           userid: user._id,
           frequency,
           selectedDate,
@@ -90,7 +90,7 @@
     const handleDelete = async (record) => {
       try {
         setLoading(true)
-        await axios.post('http://localhost:8080/transactions/delete-transaction', {
+        await axios.post('https://expense-management-app-qou0.onrender.com/transactions/delete-transaction', {
         transactionId: record._id
       })
       setTimeout(() => {
@@ -112,7 +112,7 @@
         const user = JSON.parse(localStorage.getItem('user'))
         setLoading(true)
         if(editTable){
-        await axios.post('http://localhost:8080/transactions/edit-transaction', {
+        await axios.post('https://expense-management-app-qou0.onrender.com/transactions/edit-transaction', {
           payload: {
             ...values,
             userId: user._id,
@@ -126,7 +126,7 @@
         setLoading(false)
         }
         else{
-        await axios.post('http://localhost:8080/transactions/add-transaction', {...values, userid:user._id})
+        await axios.post('https://expense-management-app-qou0.onrender.com/transactions/add-transaction', {...values, userid:user._id})
         setTimeout(() => {
           window.location.reload();
         }, 2000);
